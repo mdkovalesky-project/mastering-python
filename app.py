@@ -1,4 +1,7 @@
-birth_year = input('birth year:')
-age = 2022 - int(birth_year)
-print(age)
-# this is type conversation doesn't cheatsheet
+name = "Muhammad Dzikri Kovalesky"
+print(len(name))
+print(name.upper())
+print(name.lower())
+print(name.find('a'))
+print(name.replace('m', 'b'))
+print('Muhammad' in name)
