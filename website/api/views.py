@@ -6,6 +6,6 @@ class NotesView(Resource):
         return jsonify(
             {
                 "message": "testing API",
-                "message2": "Testing API 2"
+                "message2": "Testing API 2q"
             }
         )
