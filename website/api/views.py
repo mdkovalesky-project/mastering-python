@@ -5,6 +5,6 @@ class NotesView(Resource):
     def get(self):
         return jsonify(
             {
-                "message": "Bakso Kontol"
+                "message": "testing API"
             }
         )
