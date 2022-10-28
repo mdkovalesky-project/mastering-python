@@ -4,8 +4,6 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 api = Api(app, title='Nodium', description='Start from Reader Become Writer')
 
-ns = api.models('Nodium', description='Nodium operation')
-
 
 class NotesView(Resource):
     def get(self):
@@ -20,6 +18,3 @@ class NotesView(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('title', action='append')
         parser.add_argument('article', action='append')
-
-        
-
