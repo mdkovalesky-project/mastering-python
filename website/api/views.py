@@ -6,7 +6,6 @@ api = Api(app)
 
 
 class NotesView(Resource):
-    @property
     def get(self):
         return jsonify(
             {
@@ -14,7 +13,6 @@ class NotesView(Resource):
             }
         )
 
-    @property
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('title', action='append')

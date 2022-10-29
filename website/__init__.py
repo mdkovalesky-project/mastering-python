@@ -1,12 +1,10 @@
 from flask import Flask
-from .ext import db, migrate
-from flask_login import LoginManager
+from .ext import db, migrate, login_manager
 
 from .models import User
 
 
 DB_NAME = "database.db"
-
 
 
 def create_app():
@@ -25,12 +23,12 @@ def create_app():
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(api_blueprint, url_prefix="/api")
 
-    login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
 
     @login_manager.user_loader
     def load_user(id):
-        return User.query.get
+        return User.query.get(id)
+
 
     return app
