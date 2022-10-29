@@ -3,7 +3,6 @@ from flask_restx import Api
 
 from .views import NotesView
 
-
 api_blueprint = Blueprint("api", __name__)
 
 api = Api(api_blueprint)
