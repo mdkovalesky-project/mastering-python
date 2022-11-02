@@ -1,17 +1,13 @@
-from flask_restx import Resource, Api, reqparse
-from flask import Flask, jsonify
+from flask_restx import Resource, reqparse
+from flask import jsonify
 
-app = Flask(__name__)
-api = Api(app)
-
+from website.api.schema import note_schema, note_schemas
+from website.models import Note, User
 
 class NotesView(Resource):
     def get(self):
-        return jsonify(
-            {
-                "message": "testing API123"
-            }
-        )
+        notes = Note.query.all()
+        return note_schemas.dump(notes)
 
     def post(self):
         parser = reqparse.RequestParser()
